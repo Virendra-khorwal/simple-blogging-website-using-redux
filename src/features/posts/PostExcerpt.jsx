@@ -1,6 +1,7 @@
 import PostAuthor from "./PostAuthor";
 import TimeAgo from "./TImeAgo";
 import ReactionButtons from "./ReactionButtons";
+import { Link } from "react-router-dom";
 
 const PostExcerpt = ({ post }) => {
   return (
@@ -8,6 +9,7 @@ const PostExcerpt = ({ post }) => {
       <h3>{post.title}</h3>
       <p>{post.body.substring(0, 100)}</p>
       <p className="postCredit">
+        <Link to={`post/${post.id}`}>View Post</Link>
         <PostAuthor userId={post.userId} />
         <TimeAgo timestamp={post.date} />
       </p>
